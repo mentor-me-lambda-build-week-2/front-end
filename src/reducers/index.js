@@ -1,4 +1,5 @@
 import {
+    REGISTER_START,
     LOGIN_START,
     FETCH_DATA_START,
     FETCH_DATA_SUCCESS,
@@ -14,6 +15,12 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
 switch (action.type) {
+    case REGISTER_START: {
+        return {
+            ...state,
+            isLoggingIn: true
+        };
+        }
     case LOGIN_START: {
     return {
         ...state,

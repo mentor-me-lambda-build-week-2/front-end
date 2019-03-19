@@ -5,12 +5,22 @@ export const FETCH_DATA_START = "FETCH_DATA_START";
 export const FETCH_DATA_SUCCESS = "FETCH_DATA_SUCCESS";
 export const FETCH_DATA_FAILURE = "FETCH_DATA_FAILURE";
 
-export const login = creds => dispatch => {
+export const REGISTER_START = "REGISTER_START";
+
+export const register = creds => dispatch => {
 	dispatch({ type: LOGIN_START });
+	return axios.post("http://localhost:5000/api/register", creds).then(res => {
+		localStorage.setItem("token", res.data.payload);
+	});
+};
+
+export const login = creds => dispatch => {
+	dispatch({ type: REGISTER_START });
 	return axios.post("http://localhost:5000/api/login", creds).then(res => {
 		localStorage.setItem("token", res.data.payload);
 	});
 };
+
 
 export const getData = () => dispatch => {
 	dispatch({ type: FETCH_DATA_START });
