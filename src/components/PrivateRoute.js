@@ -2,7 +2,7 @@ import React from 'react';
 import {Route, Redirect, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 
-const Dashboard = ({ component: Component, errorStatusCode, ...rest }) => {
+const PrivateRoute = ({ component: Component, errorStatusCode, ...rest }) => {
     return (
         <Route
             {...rest}
@@ -26,4 +26,5 @@ const mapStateToProps = state => ({
 });
 
 export default withRouter(
-connect( mapStateToProps, {})(Dashboard));
+    connect( mapStateToProps, {})(PrivateRoute)
+);

@@ -3,7 +3,10 @@ import './App.css';
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 import Login from './Login';
-import Dashboard from './Dashboard';
+import PrivateRoute from './PrivateRoute';
+import Register from './Register';
+import Dashboard from './Dashboard/Dashboard'
+
 
 export default function App() {
   return (
@@ -11,14 +14,15 @@ export default function App() {
     <div className="App">
       <ul>
         <li>
-          <Link to="/home">Home</Link>
+          <Link to="/register">Register</Link>
         </li>
         <li>
           <Link to="/dashboard">Dashboard</Link>
         </li>
       </ul>
       <Route path="/login" component={Login} />
-      <Dashboard exact path="/dashboard" component={Dashboard} />
+      <Route path="/register" component={Register} />
+      <PrivateRoute exact path="/dashboard" component={Dashboard} />
     </div>
   </Router>
   )

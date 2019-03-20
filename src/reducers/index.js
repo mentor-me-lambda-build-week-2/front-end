@@ -1,4 +1,5 @@
 import {
+    REGISTER_START,
     LOGIN_START,
     FETCH_DATA_START,
     FETCH_DATA_SUCCESS,
@@ -12,8 +13,14 @@ const initialState = {
     isLoggingIn: false
 };
 
-const reducer = (state = initialState, action) => {
+const LoginReducer = (state = initialState, action) => {
 switch (action.type) {
+    case REGISTER_START: {
+        return {
+            ...state,
+            isLoggingIn: true
+        };
+        }
     case LOGIN_START: {
     return {
         ...state,
@@ -41,4 +48,4 @@ switch (action.type) {
 }
 };
 
-export default reducer;
+export default LoginReducer;
