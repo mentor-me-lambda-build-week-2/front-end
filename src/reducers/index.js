@@ -13,7 +13,7 @@ const initialState = {
     isLoggingIn: false
 };
 
-const reducer = (state = initialState, action) => {
+const LoginReducer = (state = initialState, action) => {
 switch (action.type) {
     case REGISTER_START: {
         return {
@@ -48,4 +48,4 @@ switch (action.type) {
 }
 };
 
-export default reducer;
+export default LoginReducer;
