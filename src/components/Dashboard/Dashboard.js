@@ -31,11 +31,11 @@ class Dashboard extends Component {
             <QuestionForm />
             {this.props.error ? <h3>Error Fetching Friends</h3> : null}
             <QuestionSeacrh />
-            {this.props.gettingQuests ? 
+            {/* {this.props.gettingQuests ? 
                 ( <h3>Loading</h3>) : //change to loader
                 ( <QuestionList friends={this.props.quests} /> )
-            }
-
+            } */}
+            <QuestionList />
         </ContainerDiv>
         )
     }

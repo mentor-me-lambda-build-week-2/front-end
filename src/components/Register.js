@@ -12,7 +12,7 @@ class Register extends Component {
             email:'',
             username: '',
             password: '',
-            isMentor: false,
+            ismentor: false,
         }
     };
 
@@ -80,14 +80,15 @@ class Register extends Component {
                 <br/>
                 <input
                     type="radio"
-                    name="isMentor"
+                    name="ismentor"
+                    checked = 'checked'
                     value={false}
                     onChange={this.handleChange}
-                /> Entreprenuer
+                /> Entrepreneur
                 <br/>
                 <input
                     type="radio"
-                    name="isMentor"
+                    name="ismentor"
                     value={true}
                     onChange={this.handleChange}
                 /> Mentor

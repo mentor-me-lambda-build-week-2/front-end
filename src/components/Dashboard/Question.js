@@ -1,12 +1,14 @@
 import React from 'react';
-import {BrowserRouter as Route} from 'react-router-dom'
 
-export default function Question() {
-
+export default function Question(props){
 
         return (
         <div>
-            
+            <h3>{props.question.title}</h3>
+            {/* <
+            <div>User: {props.question.username}
+                <button onClick = {handleClick}>Answers</button>
+            </div> */}
         </div>
     )
 }
