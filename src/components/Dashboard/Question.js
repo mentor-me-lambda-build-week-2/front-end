@@ -11,12 +11,12 @@ const QuestDiv = styled.div`
 export default function Question(props){
 
         return (
-        <div>
+        <QuestDiv>
             <h3>{props.question.title}</h3>
             {/* <
-            <div>User: {props.question.username}
+            <QuestDiv>User: {props.question.username}
                 <button onClick = {handleClick}>Answers</button>
-            </div> */}
-        </div>
+            </QuestDiv> */}
+        </QuestDiv>
     )
 }

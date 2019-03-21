@@ -42,11 +42,11 @@ class Dashboard extends Component {
 }
 
 const mapStateToProps = state => {
-    const { questReducer } = state;
+    const { reducer } = state;
     return {
-        // quests : questReducer.quests,
-        // error : questReducer.error,
-        // gettingQuests : questReducer.gettingQuests
+        quests : reducer.quests,
+        error : reducer.error,
+        gettingQuests : reducer.gettingQuests
     }
 }
 
