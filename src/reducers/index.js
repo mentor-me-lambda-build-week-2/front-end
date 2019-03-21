@@ -10,7 +10,8 @@ const initialState = {
     error: '',
     errorStatusCode: null,
     fetchingData: false,
-    isLoggingIn: false
+    isLoggingIn: false,
+    isSelected: false
 };
 
 const reducer = (state = initialState, action) => {

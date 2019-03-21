@@ -20,6 +20,9 @@ export const register = creds => dispatch => {
 		.then(res => {
 			// console.log('Res ', res);
 			localStorage.setItem("token", res.data.jwt);
+			localStorage.setItem("id", res.data.id );
+			localStorage.setItem("firstname", res.data.firstname );
+			localStorage.setItem("username", res.data.username );
 		})
 		.catch( err =>  console.log(err));
 };
@@ -29,7 +32,10 @@ export const login = creds => dispatch => {
 	axios.defaults.withCredentials = true;
 	return axios.post("https://mentorme-backend.now.sh/api/login", creds)
 		.then(res => {
-		localStorage.setItem("token", res.data.jwt);
+			localStorage.setItem("token", res.data.jwt);
+			localStorage.setItem("id", res.data.id );
+			localStorage.setItem("firstname", res.data.firstname );
+			localStorage.setItem("username", res.data.username );
 		})
 		.catch(err => console.log(err));
 };
@@ -42,7 +48,7 @@ export const login = creds => dispatch => {
 export const getQuests = () => dispatch => {
 	dispatch({ type: FETCH_DATA_START });
 	axios
-		.get("https://mentorme-backend.now.sh/api/question", {
+		.get("https://mentorme-backend.now.sh/api/questions", {
 			headers: { Authorization: localStorage.getItem("token") }
 		})
 		.then(res => {
@@ -64,7 +70,7 @@ export const askQuest = question  => dispatch => {
 	axios.defaults.withCredentials = true;
 	// console.log('Creds ', creds);
 	return axios
-		.post("https://mentorme-backend.now.sh/api/", question)
+		.post("https://mentorme-backend.now.sh/api/questions", question)
 		.then(res => {
 			console.log()
 		})
@@ -78,7 +84,7 @@ export const deleteQuest = id_var  => dispatch => {
 	axios.defaults.withCredentials = true;
 	// console.log('Creds ', creds);
 	return axios
-		.delete(`https://mentorme-backend.now.sh/api/question/${id_var}`)
+		.delete(`https://mentorme-backend.now.sh/api/questions/${id_var}`)
 		.then(res => {
 			console.log()
 		})
@@ -92,7 +98,7 @@ export const editQuest = (id_var, creds)  => dispatch => {
 	axios.defaults.withCredentials = true;
 	// console.log('Creds ', creds);
 	return axios
-		.put(`https://mentorme-backend.now.sh/api/question/${id_var}`, creds)
+		.put(`https://mentorme-backend.now.sh/api/questions/${id_var}`, creds)
 		.then(res => {
 			console.log()
 		})
