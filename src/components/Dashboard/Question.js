@@ -1,5 +1,13 @@
 import React from 'react';
 
+import styled from 'styled-components';
+
+const QuestDiv = styled.div`
+    display: flex;
+    justify-content: center; 
+    align-contend: center; 
+`
+
 export default function Question(props){
 
         return (

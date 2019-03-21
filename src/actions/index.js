@@ -6,6 +6,9 @@ export const FETCH_DATA_SUCCESS = "FETCH_DATA_SUCCESS";
 export const FETCH_DATA_FAILURE = "FETCH_DATA_FAILURE";
 
 export const REGISTER_START = "REGISTER_START";
+export const ASK_START = 'ASK_START';
+export const DELETE_START = 'DELETE_START';
+export const ANSWER_START = 'ANSWER_START';
 
 
 export const register = creds => dispatch => {
@@ -84,7 +87,7 @@ export const deleteQuest = id_var  => dispatch => {
 
 
 // takes id and creds
-export const editQuest = id_var  => dispatch => {
+export const editQuest = (id_var, creds)  => dispatch => {
 	dispatch({ type: DELETE_START });
 	axios.defaults.withCredentials = true;
 	// console.log('Creds ', creds);
@@ -152,7 +155,7 @@ export const deleteAnswer = id_var  => dispatch => {
 
 
 // takes id and creds
-export const editAnswer = id_var  => dispatch => {
+export const editAnswer = (id_var, creds)  => dispatch => {
 	dispatch({ type: DELETE_START });
 	axios.defaults.withCredentials = true;
 	// console.log('Creds ', creds);

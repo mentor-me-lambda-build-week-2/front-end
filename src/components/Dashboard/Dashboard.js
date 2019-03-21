@@ -5,7 +5,7 @@ import QuestionSeacrh from './QuestionSeacrh';
 import QuestionList from './QuestionList';
 import QuestionForm from './QuestionForm';
 
-import { getQuests } from './actions';
+import { getQuests } from '../../actions';
 import styled from 'styled-components';
 
 const ContainerDiv = styled.div`
