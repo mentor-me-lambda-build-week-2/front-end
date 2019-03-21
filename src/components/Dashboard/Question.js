@@ -1,12 +1,22 @@
 import React from 'react';
-import {BrowserRouter as Route} from 'react-router-dom'
 
-export default function Question() {
+import styled from 'styled-components';
 
+const QuestDiv = styled.div`
+    display: flex;
+    justify-content: center; 
+    align-contend: center; 
+`
+
+export default function Question(props){
 
         return (
-        <div>
-            
-        </div>
+        <QuestDiv>
+            <h3>{props.question.title}</h3>
+            {/* <
+            <QuestDiv>User: {props.question.username}
+                <button onClick = {handleClick}>Answers</button>
+            </QuestDiv> */}
+        </QuestDiv>
     )
 }

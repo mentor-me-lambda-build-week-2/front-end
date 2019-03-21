@@ -5,7 +5,7 @@ import QuestionSeacrh from './QuestionSeacrh';
 import QuestionList from './QuestionList';
 import QuestionForm from './QuestionForm';
 
-import { getQuests } from './actions';
+import { getQuests } from '../../actions';
 import styled from 'styled-components';
 
 const ContainerDiv = styled.div`
@@ -31,22 +31,22 @@ class Dashboard extends Component {
             <QuestionForm />
             {this.props.error ? <h3>Error Fetching Friends</h3> : null}
             <QuestionSeacrh />
-            {this.props.gettingQuests ? 
+            {/* {this.props.gettingQuests ? 
                 ( <h3>Loading</h3>) : //change to loader
                 ( <QuestionList friends={this.props.quests} /> )
-            }
-
+            } */}
+            <QuestionList />
         </ContainerDiv>
         )
     }
 }
 
 const mapStateToProps = state => {
-    const { questReducer } = state;
+    const { reducer } = state;
     return {
-        // quests : questReducer.quests,
-        // error : questReducer.error,
-        // gettingQuests : questReducer.gettingQuests
+        quests : reducer.quests,
+        error : reducer.error,
+        gettingQuests : reducer.gettingQuests
     }
 }
 
