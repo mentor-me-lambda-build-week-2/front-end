@@ -6,6 +6,9 @@ const QuestDiv = styled.div`
     display: flex;
     justify-content: center;
     align-contend: center;
+    flex-direction: column;
+
+    
 `;
 
 export default class Question extends Component {

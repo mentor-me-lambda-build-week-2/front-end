@@ -28,7 +28,7 @@ const FormContainer = styled.div`
 `
 
 
-class QuestionForm extends Component {
+class AnswerForm extends Component {
     state ={
         title: '',
         body: '',
@@ -44,15 +44,15 @@ class QuestionForm extends Component {
         this.setState({ [event.target.name]: event.target.value });
     }
 
-    handleAskQuestion = _ => {
+    handlePostAnswer = _ => {
         // e.preventDefault();
         
-        const QObj = {
+        const AObj = {
             u_id : this.state.id,
             title: this.state.title,
             body: this.state.body
         }
-        console.log(" QForm State: ", QObj)
+        console.log(" AForm State: ", AObj)
         const token = localStorage.getItem('token');
         
         axios.defaults.withCredentials = true;
@@ -60,7 +60,7 @@ class QuestionForm extends Component {
         headers: { Authorization: token },
         };
         axios
-            .post("https://mentorme-backend.now.sh/api/questions/", QObj,  requestOptions)
+            .post("https://mentorme-backend.now.sh/api/answers/", AObj,  requestOptions)
 		    .then(res => {
                 console.log(res)
                 const token = localStorage.getItem('token');
@@ -68,7 +68,7 @@ class QuestionForm extends Component {
                 headers: { Authorization: token },
                 };
                 axios
-                .get('https://mentorme-backend.now.sh/api/questions/', requestOptions)
+                .get('https://mentorme-backend.now.sh/api/answers/', requestOptions)
                 .then(res => {
                     // we're sent an array of users
                     this.props.updateQuest(res.data);
@@ -89,7 +89,7 @@ class QuestionForm extends Component {
     render() {
         return (
         <FormContainer>
-            <h3>QuestionForm</h3>
+            <h3>Answer Form</h3>
             <form className="">
                 <input
                 className="input"
@@ -115,8 +115,8 @@ class QuestionForm extends Component {
                 placeholder="Tags"
                 onChange={this.handleInputChange}
                 /> */}
-                <button onClick={() => this.handleAskQuestion()} type="button">
-                Ask Question
+                <button onClick={() => this.handlePostAnswer()} type="button">
+                Answer
                 </button>
             </form>
         </FormContainer>
@@ -133,5 +133,5 @@ const mapStateToProps = state => {
 
 
 export default withRouter(
-    connect(mapStateToProps, {askQuest})(QuestionForm)
+    connect(mapStateToProps, {askQuest})(AnswerForm)
 )

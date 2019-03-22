@@ -1,5 +1,27 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
+
+import AnswerForm from './AnswerForm';
+
+const ContainDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: flex-start;
+    
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 15px;
+    margin-bottom: 15px;
+
+`
+
+const StylesP = styled.p`
+    align-self: flex-start;
+    
+    
+`
 
 
 export default class QuestionSelected extends Component {
@@ -38,10 +60,12 @@ export default class QuestionSelected extends Component {
 
     render() {
         return (
-        <div>
+        <ContainDiv>
+            <AnswerForm />
             <h1>{this.props.selectedQuestion.title}</h1>
-            {this.state.answers.map(answer => <p>{answer.body}</p> )}
-        </div>
+
+            {this.state.answers.map(answer => <StylesP>{answer.body}</StylesP> )}
+        </ContainDiv>
         )
     }
 }

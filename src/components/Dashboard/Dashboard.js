@@ -14,9 +14,10 @@ const ContainerDiv = styled.div`
     display:flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center
-`
+    align-content: center;
 
+    
+`
 
 class Dashboard extends Component {
     state ={

@@ -12,6 +12,12 @@ const QuestionDiv = styled.div`
   justify-content: center; 
   align-content: center;
   flex-direction: column;
+  
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 15px;
+  margin-bottom: 15px;
+
 `
 const QDiv = styled.div`
 display: flex;
@@ -19,6 +25,12 @@ justify-content: center;
 align-content: center;
 flex-direction: column;
 cursor: pointer;
+
+padding: 15px;
+border: 1px solid black;
+border-radius: 15px;
+margin-bottom: 15px;
+
 `
 
 export default class QuestionList extends Component {
